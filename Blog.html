@@ -13,19 +13,30 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  Accordion Item #1
+                    Discuss the scope of var, let, and const
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    VAR: <br>
+                    • Function Scope: var is function-scoped. it is accessible within a function.
+                    • Hoisting: var variables are hoisted to the top of their scope and initialized with a value of undefined.
+                    <br>
+                    LET: <br>
+                    • Block Scope: let can be accessible within a block scope.
+                    • Hoisting: let variables are hoisted to the top of their scope but they are not initialized. if initialized then it will give a reference error.
+                    <br>
+                    CONST:
+                    <br>
+                    • Block Scope: Like let, const is also block-scoped.
+                    • Hoisting: like let, const declarations are hoisted to the top but are not initialized.
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  Accordion Item #2
+                    Tell us the use cases of null and undefined
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
@@ -37,7 +48,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  Accordion Item #3
+                    What do you mean by REST API?
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
@@ -47,6 +58,9 @@
               </div>
             </div>
           </div>
+    </div>
+    <div class=" text-center">
+        <button class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning"><a href="./index.html" class="text-white">Go to Home</a></button>
     </div>
 
 
