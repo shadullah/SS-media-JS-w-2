@@ -4,6 +4,12 @@ const loadData = () => {
     .then((datas) => displayData(datas.data));
 };
 
+const sortByViews = (datas) => {
+  return datas.sort(
+    (a, b) => parseFloat(b.others.views) - parseFloat(a.others.views)
+  );
+};
+
 loadData();
 
 const displayData = (datas) => {
@@ -14,7 +20,10 @@ const displayData = (datas) => {
     const card = document.createElement("div");
     card.classList.add("box");
     card.innerHTML = `
-            <img class="box-img rounded" src=${data.thumbnail} alt="">
+            <div>
+                <img class="box-img rounded" src=${data.thumbnail} alt="">
+                
+            </div>
             <div class="d-flex justify-content-evenly mt-3">
                 <div class="w-25">
                     <img class="w-75 rounded-circle" src=${
@@ -26,13 +35,30 @@ const displayData = (datas) => {
                     <div class="d-flex"><p>${
                       data.authors[0].profile_name
                     }</p><span>${
-      data.authors[0].verified ? true : false
-    }</span></div>
-                    <p>${data.others.views} views</p>
+      data.authors[0].verified
+        ? '<img class="w-50" src="./img/verified_icon.png" alt="" />'
+        : ""
+    }</span>
+                    </div>
+                    <div class="">
+                        <p>${data.others.views} views</p>
+                        <p>${data.others.posted_date}</p>
+                    </div>
                 </div>
             </div>
         `;
 
     divContainer.appendChild(card);
   });
+};
+
+document.getElementById("sortBtn").addEventListener("click", () => {
+  const sorteddata = sortByViews(datas);
+  displayData(sorteddata);
+});
+
+const music = () => {
+  fetch("https://openapi.programming-hero.com/api/videos/category/1001")
+    .then((res) => res.json())
+    .then((datas) => console.log(datas.data));
 };
