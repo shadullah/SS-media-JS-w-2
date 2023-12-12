@@ -11,18 +11,18 @@
     <nav class="my-5 container">
         <div class="d-flex justify-content-between mb-3">
             <div><h1 class="textl-xs md:text-3xl" style="color: coral">SS Media</h1></div>
-            <div><button onclick="sortByViews()" id="sortBtn" class="md:px-3 md:py-2 border-0 text-white fw-bold" style="background-color: coral;">Sort by View</button></div>
-            <div><a href="./Blog.html" target="_blank" class="md:px-3 md:py-2 border-0 text-white fw-bold" style="background-color: coral;">Blog</a></div>
+            <div><button onclick="sortByView()" id="sortBtn" class="px-2 py-1  md:px-3 md:py-2 border-0 text-white fw-bold" style="background-color: coral;">Sort by View</button></div>
+            <div><a href="./Blog.html" target="_blank" class="px-2 py-1 md:px-3 md:py-2 border-0 text-white fw-bold" style="background-color: coral;">Blog</a></div>
         </div>
         <div class="border-3 border-bottom border-warning"></div>
     </nav>
 
     <main>
         <div class="text-center">
-            <button onclick="loadData()" class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">All</button>
-            <button onclick="music()" class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">Song</button>
-            <button class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">Comedy</button>
-            <button class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">Drawing</button>
+            <button onclick="loadData(1000)" class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">All</button>
+            <button onclick="loadMusic()" class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">Song</button>
+            <button onclick="loadComedy()" class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">Comedy</button>
+            <button onclick="loadDrawing()" class="px-3 py-2 border-0 rounded text-white fw-bold bg-warning">Drawing</button>
         </div>
         <div class="container">
             <div class="row">

@@ -1,16 +1,11 @@
-const loadData = () => {
-  fetch("https://openapi.programming-hero.com/api/videos/category/1000")
+const loadData = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
     .then((res) => res.json())
-    .then((datas) => displayData(datas.data));
+    .then((datas) => {
+      //   datas = data.data || [];
+      displayData(datas.data);
+    });
 };
-
-const sortByViews = (datas) => {
-  return datas.sort(
-    (a, b) => parseFloat(b.others.views) - parseFloat(a.others.views)
-  );
-};
-
-loadData();
 
 const convertToHr = (sec) => {
   const hr = Math.floor(sec / 3600);
@@ -21,8 +16,21 @@ const convertToHr = (sec) => {
 const displayData = (datas) => {
   const divContainer = document.getElementById("div_contain");
 
+  divContainer.innerHTML = "";
+
+  if (datas.length == 0) {
+    divContainer.innerHTML = `
+    <div class="text-center">
+    <img class="w-50 border-2 rounded-circle p-3 my-4" src="./img/no-video.png" />
+    <h2 class="text-danger">There is no Data available</h2>
+    </div>
+    `;
+    return;
+  }
+
   datas.forEach((data) => {
-    console.log(datas);
+    // console.log(datas);
+
     const card = document.createElement("div");
     card.classList.add("box");
     card.innerHTML = `
@@ -58,13 +66,14 @@ const displayData = (datas) => {
   });
 };
 
-document.getElementById("sortBtn").addEventListener("click", () => {
-  const sorteddata = sortByViews(datas);
-  displayData(sorteddata);
-});
-
-const music = () => {
-  fetch("https://openapi.programming-hero.com/api/videos/category/1001")
-    .then((res) => res.json())
-    .then((datas) => console.log(datas.data));
+const loadMusic = () => {
+  loadData(1001);
 };
+const loadComedy = () => {
+  loadData(1003);
+};
+const loadDrawing = () => {
+  loadData(1005);
+};
+
+loadData(1000);
