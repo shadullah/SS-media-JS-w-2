@@ -12,6 +12,12 @@ const sortByViews = (datas) => {
 
 loadData();
 
+const convertToHr = (sec) => {
+  const hr = Math.floor(sec / 3600);
+  const mn = Math.floor((sec % 3600) / 60);
+  return `${hr} hrs ${mn} min ago`;
+};
+
 const displayData = (datas) => {
   const divContainer = document.getElementById("div_contain");
 
@@ -42,7 +48,7 @@ const displayData = (datas) => {
                     </div>
                     <div class="">
                         <p>${data.others.views} views</p>
-                        <p>${data.others.posted_date}</p>
+                        <p>${convertToHr(data.others?.posted_date)}</p>
                     </div>
                 </div>
             </div>
